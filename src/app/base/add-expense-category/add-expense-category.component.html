@@ -1,0 +1,18 @@
+<div class="add-expense">
+    <header>
+        <p class="expense-title">Add an expense category</p>
+    </header>
+    <form [formGroup]="form" (ngSubmit)="onSubmit()">
+        <div class="expense-fields">
+            <mat-form-field class="full-width">
+                <input type="text" formControlName="category" id="category" matInput placeholder="Category">
+                <mat-icon matSuffix>short_text</mat-icon>
+            </mat-form-field>
+        </div>
+
+        <div class="actions">
+            <button [disabled]="loading" mat-raised-button color="primary">Save</button>
+            <loading *ngIf="loading"></loading>
+        </div>
+    </form>
+</div>
