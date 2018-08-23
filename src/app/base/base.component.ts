@@ -1,19 +1,17 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-    selector: 'base',
+    selector: 'app-base',
     templateUrl: './base.component.html',
     styleUrls: ['./base.component.css']
 })
-export class BaseComponent implements OnInit{
+export class BaseComponent implements OnInit {
     title = 'base';
 
-    private firstname : String = "";
-    private lastname : String = "";
+    private firstname: string;
+    private lastname: string;
 
-    constructor() {}
-
-    ngOnInit() {
+    ngOnInit(): void {
         this.firstname = JSON.parse(localStorage.getItem('firstname'));
         this.lastname = JSON.parse(localStorage.getItem('lastname'));
     }

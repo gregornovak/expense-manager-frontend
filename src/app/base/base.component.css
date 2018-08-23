@@ -1,5 +1,5 @@
 main {
-    max-width: 1200px;
+    max-width: 1000px;
     margin: 0 auto;
     width: 80%;
     flex: 1;
@@ -31,5 +31,4 @@ footer {
 footer p {
     color: white;
     text-align: center;
-    font-family: Roboto,"Helvetica Neue",sans-serif;
 }

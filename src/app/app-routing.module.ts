@@ -1,11 +1,12 @@
-import { NgModule }             from '@angular/core';
-import { CommonModule }         from '@angular/common';
+import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
-import { LoginComponent }       from "./login/login.component";
-import { BaseComponent }        from "./base/base.component";
-import { HomeComponent }        from "./base/home/home.component";
-import { AuthGuard }            from "./guards/auth.guard";
-import { AddExpenseComponent }  from "./base/add-expense/add-expense.component";
+import { LoginComponent } from './login/login.component';
+import { BaseComponent } from './base/base.component';
+import { HomeComponent } from './base/home/home.component';
+import { AuthGuard } from './guards/auth.guard';
+import { AddExpenseComponent } from './base/add-expense/add-expense.component';
+import { AddExpenseCategoryComponent } from './base/add-expense-category/add-expense-categeory.component';
 
 const routes: Routes = [
     {
@@ -20,11 +21,15 @@ const routes: Routes = [
             },
             {
                 path: 'home',
-                component: HomeComponent,
+                component: HomeComponent
             },
             {
                 path: 'expense/new',
-                component: AddExpenseComponent,
+                component: AddExpenseComponent
+            },
+            {
+                path: 'expense-category/new',
+                component: AddExpenseCategoryComponent
             }
         ]
     },
