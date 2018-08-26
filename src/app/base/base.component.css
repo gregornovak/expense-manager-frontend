@@ -16,6 +16,7 @@ nav {
     margin-left: auto;
     display: flex;
     align-items: center;
+    cursor: pointer;
 }
 #user-nav mat-icon {
     margin-right: 5px;
@@ -31,4 +32,23 @@ footer {
 footer p {
     color: white;
     text-align: center;
+}
+#user-nav > #logoutBtn {
+    display: none;
+    position: absolute;
+    top: 36px;
+    background: #3F51B5;
+    width: 143px;
+    height: 50px;
+    align-items: center;
+    justify-content: center;
+}
+#user-nav > #logoutBtn a {
+    width: 100%;
+}
+#user-nav:hover {
+    position: relative;
+}
+#user-nav:hover > #logoutBtn{
+    display: flex;
 }

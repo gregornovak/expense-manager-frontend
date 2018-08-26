@@ -8,10 +8,12 @@
                 <a [routerLink]="['/home']" mat-button class="mat-button">Expenses</a>
                 <a [routerLink]="['/expense/new']" mat-button class="mat-button">Add expense</a>
                 <a [routerLink]="['/expense-category/new']" mat-button class="mat-button">Add expense category</a>
-                <a id="user-nav">
-                    <mat-icon>account_circle</mat-icon>{{ firstname }} {{ lastname }}
-                    <!-- <a [routerLink]="['/logout']" mat-button class="mat-button">Logout</a> -->
-                </a>
+                <div id="user-nav">
+                    <mat-icon>account_circle</mat-icon>{{ firstname }} {{ lastname }}<mat-icon>expand_more</mat-icon>
+                    <div id="logoutBtn">
+                        <a [routerLink]="['/logout']" mat-button class="mat-button">Logout</a>
+                    </div>
+                </div>
             </nav>
         </mat-toolbar-row>
     </mat-toolbar>
