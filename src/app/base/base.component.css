@@ -8,9 +8,27 @@ nav {
     display: flex;
     flex: 1;
 }
+nav a {
+    align-self: center;
+}
+.logo-wrapper {
+    margin-right: 15px;
+    padding: 5px;
+    color: white;
+    border-radius: 2px;
+}
 .logo-wrapper mat-icon {
     vertical-align: middle;
-    margin-right: 25px;
+}
+.logo-wrapper .mat-icon {
+    height: 32px;
+    width: 32px;
+}
+.logo-wrapper .material-icons {
+    font-size: 32px;
+}
+.logo-wrapper:hover {
+    background-color: #3949ab;
 }
 #user-nav {
     margin-left: auto;

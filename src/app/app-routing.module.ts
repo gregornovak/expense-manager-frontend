@@ -7,6 +7,7 @@ import { HomeComponent } from './base/home/home.component';
 import { AuthGuard } from './guards/auth.guard';
 import { AddExpenseComponent } from './base/add-expense/add-expense.component';
 import { AddExpenseCategoryComponent } from './base/add-expense-category/add-expense-categeory.component';
+import { ExpenseComponent } from './base/expense/expense.component';
 
 const routes: Routes = [
     {
@@ -30,6 +31,10 @@ const routes: Routes = [
             {
                 path: 'expense-category/new',
                 component: AddExpenseCategoryComponent
+            },
+            {
+                path: 'expenses',
+                component: ExpenseComponent
             }
         ]
     },

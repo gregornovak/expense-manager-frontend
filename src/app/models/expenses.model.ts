@@ -1,6 +1,6 @@
 import { Expense } from './expense.model';
 
 export class Expenses {
-    data: Expense[];
+    data: Array<Expense>;
     count: number;
 }

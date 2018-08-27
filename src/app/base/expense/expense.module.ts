@@ -13,4 +13,4 @@ import { MatPaginatorModule } from '@angular/material/paginator';
     ]
 })
 
-export class HomeModule { }
+export class ExpenseModule { }

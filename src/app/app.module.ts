@@ -24,6 +24,16 @@ import { AlertComponent } from './directives/alert/alert.component';
 import { AlertModule } from './directives/alert/alert.module';
 import { AddExpenseCategoryModule } from './base/add-expense-category/add-expense-category.module';
 import { AddExpenseCategoryComponent } from './base/add-expense-category/add-expense-categeory.component';
+import { ExpenseModule } from './base/expense/expense.module';
+import { ExpenseComponent } from './base/expense/expense.component';
+import { ChartModule, HIGHCHARTS_MODULES } from 'angular-highcharts';
+import stock from 'highcharts/modules/stock.src';
+import more from 'highcharts/highcharts-more.src';
+
+export function highchartsModules(): Array<any> {
+    // apply Highcharts Modules to this array
+    return [stock, more];
+}
 
 @NgModule({
     declarations: [
@@ -34,6 +44,7 @@ import { AddExpenseCategoryComponent } from './base/add-expense-category/add-exp
         AddExpenseComponent,
         AlertComponent,
         LoadingComponent,
+        ExpenseComponent,
         AddExpenseCategoryComponent
     ],
     imports: [
@@ -47,7 +58,9 @@ import { AddExpenseCategoryComponent } from './base/add-expense-category/add-exp
         LoginModule,
         AddExpenseModule,
         AlertModule,
-        AddExpenseCategoryModule
+        AddExpenseCategoryModule,
+        ExpenseModule,
+        ChartModule
     ],
     providers: [
         AuthGuard,
@@ -55,7 +68,8 @@ import { AddExpenseCategoryComponent } from './base/add-expense-category/add-exp
         AlertService,
         ExpenseService,
         ExpenseCategoriesService,
-        { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true }
+        { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
+        { provide: HIGHCHARTS_MODULES, useFactory: highchartsModules }
     ],
     bootstrap: [ AppComponent ]
 })
