@@ -6,6 +6,7 @@ import { AlertService } from '../../services/alert.service';
 import { LoadingComponent } from '../../shared/loading/loading.component';
 import { Chart, StockChart } from 'angular-highcharts';
 import { Expense } from '../../models/expense.model';
+import { ValueTransformer } from '@angular/compiler/src/util';
 
 @Component({
     selector: 'app-home',
@@ -21,6 +22,8 @@ export class HomeComponent implements OnInit {
     stockChart: StockChart;
     page = 1;
     pageSize = 5;
+    month: number = new Date().getMonth() + 1; // months start at 0
+    year: number = new Date().getFullYear();
 
     constructor(private expenseService: ExpenseService, private alertService: AlertService) {}
 
@@ -30,7 +33,7 @@ export class HomeComponent implements OnInit {
 
     private getExpenses(page: number, pageSize: number): void {
         this.loading = true;
-        this.expenseService.getAll(page, pageSize)
+        this.expenseService.getByMonth(String(this.month), String(this.year))
         .subscribe(
         result => {
             this.expenses = result;
@@ -59,15 +62,14 @@ export class HomeComponent implements OnInit {
     }
 
     private mapToGraphData(): Array<any> {
-        return this.expenses.data.map((value: Expense, index: number) => {
-            const timestamp = + new Date(value.added);
+        const arr: Array<any> = [];
+        Object.keys(this.expenses.data)
+        .forEach(value => {
+            const timestamp = + new Date(this.expenses.data[value].added);
 
-            return [timestamp, value.amount / 100];
+            arr.push([timestamp, this.expenses.data[value].amount / 100]);
         });
-        // return this.expenses.data.map((value: Expense, index: number) => {
-        //     const day = new Date(value.added).getDay();
-        //     console.log(day);
-        //     return {x: day, y: value.amount / 100, name: value.name };
-        // });
+
+        return arr;
     }
 }
