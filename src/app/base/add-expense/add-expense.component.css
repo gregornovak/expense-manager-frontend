@@ -7,7 +7,6 @@
     margin: 50px auto 0 auto;
     background: #fff;
     color: rgba(0,0,0,.87);
-    box-shadow: 0 3px 1px -2px rgba(0,0,0,.2), 0 2px 2px 0 rgba(0,0,0,.14), 0 1px 5px 0 rgba(0,0,0,.12);
     border-radius: 2px;
 }
 .full-width {
@@ -31,7 +30,7 @@
     margin-right: 0;
 }
 .add-expense header {
-    background-color: #4DD0E1;
+    background-color: #3f51b5;
     display: flex;
     min-height: 86px;
     align-items: center;

@@ -62,7 +62,7 @@
       "check-parameters"
     ],
     "no-unnecessary-initializer": true,
-    "no-implicit-dependencies": true,
+    "no-implicit-dependencies": false,
     "ordered-imports": [
       true,
       {
@@ -80,7 +80,7 @@
       "call-signature",
       "property-declaration"
     ],
-    "no-inferrable-types": true,
+    "no-inferrable-types": false,
     "no-angle-bracket-type-assertion": true,
     "callable-types": true,
     "no-null-keyword": true,

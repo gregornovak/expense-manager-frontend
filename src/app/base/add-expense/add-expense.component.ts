@@ -7,6 +7,7 @@ import { ExpenseCategories } from '../../models/expense-categories.model';
 import { Currency } from '../../models/currency.model';
 import { LoadingComponent } from '../../shared/loading/loading.component';
 import { AlertService } from '../../services/alert.service';
+import { CurrencyPipe } from '@angular/common';
 
 @Component({
     selector: 'add-expense',
@@ -14,7 +15,6 @@ import { AlertService } from '../../services/alert.service';
     styleUrls: ['./add-expense.component.css']
 })
 export class AddExpenseComponent implements OnInit {
-
     private form: FormGroup;
     private loading = false;
     private submitted = false;
@@ -31,13 +31,14 @@ export class AddExpenseComponent implements OnInit {
         private expenseService: ExpenseService,
         private expenseCategoriesService: ExpenseCategoriesService,
         private router: Router,
-        private alertService: AlertService
+        private alertService: AlertService,
+        private currencyPipe: CurrencyPipe
     ) { }
 
     ngOnInit(): void {
         this.form = this.formBuilder.group({
             name: [undefined, Validators.required],
-            amount: [undefined, Validators.required],
+            amount: [0.0, Validators.required],
             currency: [undefined, Validators.required],
             cash: [false],
             payee: [''],

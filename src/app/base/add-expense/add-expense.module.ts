@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
-import { MatSlideToggleModule, MatInputModule, MatSelectModule, MatFormFieldModule } from '@angular/material';
+import { MatFormFieldModule, MatInputModule, MatSelectModule, MatSlideToggleModule } from '@angular/material';
+import { CurrencyPipe } from '@angular/common';
 
 @NgModule({
     imports: [
@@ -13,6 +14,9 @@ import { MatSlideToggleModule, MatInputModule, MatSelectModule, MatFormFieldModu
         MatSlideToggleModule,
         MatFormFieldModule,
         MatSelectModule
+    ],
+    providers: [
+        CurrencyPipe
     ]
 })
 

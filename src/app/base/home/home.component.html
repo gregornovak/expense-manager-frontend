@@ -1,3 +1,20 @@
-<h1>Monthly overview of expenses</h1>
-
-<div [chart]="stockChart"></div>
+<div class="home-container">
+    <h1>Monthly overview of expenses</h1>
+    <form [formGroup]="form">
+        <mat-form-field>
+            <mat-select placeholder="Choose month" formControlName="month" (selectionChange)="updateMonth($event)">
+                <!-- <mat-option>Clear</mat-option> -->
+                <mat-option *ngFor="let month of months.months" [value]="month.value">{{month.month}}</mat-option>
+            </mat-select>
+            <!-- <mat-hint>Errors appear instantly!</mat-hint>
+            <mat-error *ngIf="selected.hasError('required')">You must make a selection</mat-error>
+            <mat-error *ngIf="selected.hasError('pattern') && !selected.hasError('required')">
+                Your selection is invalid
+            </mat-error> -->
+        </mat-form-field>
+    </form>
+    <div [chart]="stockChart" *ngIf="chartData"></div>
+    <p *ngIf="resultsLength == 0">No expenses for this month!
+        <a [routerLink]="['/expense/new']">Click here to add expense.</a>
+    </p>
+</div>

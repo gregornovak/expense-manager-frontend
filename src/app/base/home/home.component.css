@@ -11,7 +11,7 @@ td.mat-cell, th.mat-header-cell {
     min-height: 86px;
     padding: 0 8px;
     display: flex;
-    background: #4dd0e1;
+    background: #3f51b5;
 }
 .table-header p {
     align-self: center;
